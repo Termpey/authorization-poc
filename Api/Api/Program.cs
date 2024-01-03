@@ -13,6 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IUserService, UserService>();
 
+builder.Services.AddTransient(typeof(ILatencyUtility<User>), typeof(LatencyUtility<User>));
+
 builder.Services.AddControllers();
 
 var app = builder.Build();

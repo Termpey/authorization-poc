@@ -8,10 +8,10 @@ namespace Repositories {
 
         private List<User> _users;
 
-        private readonly LatencyUtility<User> _latencyUtility;
+        private readonly ILatencyUtility<User> _latencyUtility;
 
-        public UserRepository(){
-            _latencyUtility = new LatencyUtility<User>();
+        public UserRepository(ILatencyUtility<User> latencyUtility){
+            _latencyUtility = latencyUtility;
             _users = SeedUserData();
         }
 
@@ -62,7 +62,7 @@ namespace Repositories {
         }
 
         private string[] GetRandomFeatures(){
-            string[] features = [_features[RandomNumberGenerator.GetInt32(1)], _features[RandomNumberGenerator.GetInt32(2, 3)]];
+            string[] features = [_features[RandomNumberGenerator.GetInt32(2)], _features[RandomNumberGenerator.GetInt32(2, 4)]];
 
             return features;
         }

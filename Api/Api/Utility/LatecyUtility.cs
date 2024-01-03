@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 
 namespace Utility {
-    public class LatencyUtility<T> {
+    public class LatencyUtility<T> : ILatencyUtility<T> {
 
         private int _latencyMax = 200;
 
