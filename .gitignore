@@ -43,6 +43,6 @@
 **/.DS_Store
 **/Thumbs.db
 
-#**/**/bin
-#**/**/obj
+**/**/bin
+**/**/obj
 Api/Api/.DS_Store
