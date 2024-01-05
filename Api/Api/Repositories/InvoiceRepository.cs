@@ -32,22 +32,22 @@ namespace Repositories {
             return await _latencyUtility.LatencyWithData(newInvoice);
         }
 
-        public async Task UpdateInvoice(Invoice updateMe)
+        public Task UpdateInvoice(Invoice updateMe)
         {
             int index = _invoices.FindIndex(i => updateMe.Id == i .Id);
 
             _invoices[index] = updateMe;
             
-            return await _latencyUtility.Latency();
+            return _latencyUtility.Latency();
         }
 
-        public async Task DeleteInvoice(int id)
+        public Task DeleteInvoice(int id)
         {
             int index = _invoices.FindIndex(i => i.Id == id);
 
             _invoices.RemoveAt(index);
 
-            return await _latencyUtility.Latency()
+            return _latencyUtility.Latency();
         }
 
         private List<Invoice> SeedData(){
