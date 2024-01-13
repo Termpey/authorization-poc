@@ -13,7 +13,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IUserService, UserService>();
 
+builder.Services.AddSingleton<IInvoiceRepository, InvoiceRepository>();
+builder.Services.AddSingleton<IInvoiceService, InvoiceService>();
+
 builder.Services.AddTransient(typeof(ILatencyUtility<User>), typeof(LatencyUtility<User>));
+builder.Services.AddTransient(typeof(ILatencyUtility<Invoice>), typeof(LatencyUtility<Invoice>));
 
 builder.Services.AddControllers();
 
